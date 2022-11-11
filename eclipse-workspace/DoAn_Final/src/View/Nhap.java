@@ -387,8 +387,6 @@ public class Nhap extends javax.swing.JFrame {
 		DanhSachHoa x = new DanhSachHoa();
 		x.setVisible(true);
 		this.viewDS.hienDanhSach();
-		SuaThongTin y = new SuaThongTin();
-		y.setVisible(true);
 		x.setVisible(true);
 		x.pack();
 		x.setLocationRelativeTo(null);

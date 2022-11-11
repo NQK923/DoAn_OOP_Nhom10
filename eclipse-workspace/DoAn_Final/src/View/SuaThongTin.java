@@ -40,8 +40,8 @@ public class SuaThongTin extends javax.swing.JFrame {
 	private void initComponents() {
 		this.controller = new DS_HoaKho_Controller(null, null, null, null, null, null, null, null, null, null);
 		Action action = new DS_HoaKho_Controller(null, null, null, null, null, null, null, null, null, this);
-//		this.model = new DS_HoaDon();
-//		this.model_2 = new DS_HoaDa();
+		this.model = new DS_HoaDon();
+		this.model_2 = new DS_HoaDa();
 		jPanel1 = new javax.swing.JPanel();
 		jLabel1 = new javax.swing.JLabel();
 		jLabel2 = new javax.swing.JLabel();

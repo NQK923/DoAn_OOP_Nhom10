@@ -96,7 +96,6 @@ public class DS_HoaDon {
 			if ((hoaDon.getMaHoa()).equals(id)) {
 				return hoaDon;
 			}
-	
 		}
 		return null;
 	}
