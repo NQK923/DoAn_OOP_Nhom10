@@ -397,7 +397,7 @@ public class TrangChinh extends javax.swing.JFrame {
 		DanhSachHoa x = new DanhSachHoa();
 		x.setVisible(true);
 		this.viewDS.hienDanhSach();
-		x.setVisible(true);
+		x.setVisible(true);	
 		x.pack();
 		x.setLocationRelativeTo(null);
 		x.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -4,7 +4,7 @@ package Model;
 import java.util.ArrayList;
 
 public class DS_HoaDon {
-	public ArrayList<HoaDon> danhSachHoa;
+	public final ArrayList<HoaDon> danhSachHoa;
 	private String luaChon;
 
 	public DS_HoaDon() {
@@ -18,10 +18,6 @@ public class DS_HoaDon {
 
 	public ArrayList<HoaDon> getDanhSachHoa() {
 		return danhSachHoa;
-	}
-
-	public void setDanhSachHoa(ArrayList<HoaDon> danhSachHoa) {
-		this.danhSachHoa = danhSachHoa;
 	}
 
 	public void themHoa(HoaDon hoaDon) {

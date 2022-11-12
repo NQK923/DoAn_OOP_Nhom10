@@ -1,5 +1,4 @@
 
-
 package View;
 
 import java.util.ArrayList;
@@ -30,9 +29,8 @@ public class DanhSachHoa extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated
 	// Code">//GEN-BEGIN:initComponents
 	private void initComponents() {
-		
+
 		this.model = new DS_HoaDon();
-		
 		this.model_2 = new DS_HoaDa();
 		jPanel1 = new javax.swing.JPanel();
 		jScrollPane1 = new javax.swing.JScrollPane();
@@ -127,7 +125,7 @@ public class DanhSachHoa extends javax.swing.JFrame {
 					hoaDon.getSoLuong() + "", hoaDon.getMauHoa(), hoaDon.getSoCanh() + "", "" });
 		}
 
-		for (HoaDa hoaDa : this.model_2.danhSachHoa) {
+		for (HoaDa hoaDa : this.model_2.getDanhSachHoa()) {
 			DefaultTableModel model_table = (DefaultTableModel) jTable.getModel();
 			model_table.addRow(new Object[] { hoaDa.getTenHoa(), hoaDa.getMaHoa(), "Hoa đơn", hoaDa.getSoLuong() + "",
 					hoaDa.getMauHoa(), "", hoaDa.getSoHoaCon() + "" });
@@ -139,11 +137,7 @@ public class DanhSachHoa extends javax.swing.JFrame {
 	private javax.swing.JPanel jPanel1;
 	private javax.swing.JScrollPane jScrollPane1;
 	private javax.swing.JTable jTable;
-	
-	
 	private DS_HoaDon model;
-	
-	
 	private DS_HoaDa model_2;
 	// End of variables declaration//GEN-END:variables
 }

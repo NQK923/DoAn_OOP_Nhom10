@@ -181,9 +181,11 @@ public class Nhap extends javax.swing.JFrame {
 		jLabel11.setText("Phiếu nhập");
 
 		this.hoaDon_RadioButton = new JRadioButton("Hoa Đơn");
+		hoaDon_RadioButton.setForeground(new Color(255, 255, 255));
 		hoaDon_RadioButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		hoaDon_RadioButton.setBounds(774, 155, 103, 21);
 		this.hoaDa_RadioButton = new JRadioButton("Hoa Đa");
+		hoaDa_RadioButton.setForeground(new Color(255, 255, 255));
 		hoaDa_RadioButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		hoaDa_RadioButton.setBounds(884, 155, 103, 21);
 
@@ -194,151 +196,123 @@ public class Nhap extends javax.swing.JFrame {
 		jScrollPane1 = new JScrollPane();
 
 		javax.swing.GroupLayout gl_soLuong_Field = new javax.swing.GroupLayout(jPanel1);
-		gl_soLuong_Field.setHorizontalGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+		gl_soLuong_Field.setHorizontalGroup(
+			gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
 				.addComponent(jPanel4, Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 2600, Short.MAX_VALUE)
-				.addGroup(gl_soLuong_Field.createSequentialGroup().addGroup(gl_soLuong_Field
-						.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_soLuong_Field.createSequentialGroup().addGroup(gl_soLuong_Field
-								.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_soLuong_Field.createSequentialGroup().addContainerGap(159, Short.MAX_VALUE)
+				.addGroup(gl_soLuong_Field.createSequentialGroup()
+					.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_soLuong_Field.createSequentialGroup()
+							.addContainerGap(159, Short.MAX_VALUE)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING, false)
+								.addGroup(gl_soLuong_Field.createSequentialGroup()
+									.addGap(172)
+									.addComponent(jLabel11))
+								.addGroup(Alignment.TRAILING, gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+									.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.TRAILING)
+										.addComponent(soLuong_Field, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE)
+										.addComponent(textField_phieuNhap, GroupLayout.PREFERRED_SIZE, 412, GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_soLuong_Field.createSequentialGroup()
+											.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_soLuong_Field.createSequentialGroup()
+													.addComponent(jLabel4)
+													.addGap(35)
+													.addGap(18)
+													.addComponent(hoaDon_RadioButton, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE))
+												.addGroup(gl_soLuong_Field.createSequentialGroup()
+													.addGap(43)
+													.addComponent(jLabel7)
+													.addGap(18)
+													.addComponent(soHoaCon_Field, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE)))
+											.addPreferredGap(ComponentPlacement.RELATED)
+											.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+												.addGroup(gl_soLuong_Field.createSequentialGroup()
+													.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+														.addComponent(nhap_Button)
+														.addGroup(gl_soLuong_Field.createSequentialGroup()
+															.addGap(78)
+															.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.TRAILING)
+																.addComponent(hoaDa_RadioButton, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+																.addGroup(gl_soLuong_Field.createSequentialGroup()
+																	.addComponent(jLabel8)
+																	.addPreferredGap(ComponentPlacement.UNRELATED)
+																	.addComponent(soCanhHoa_Field, GroupLayout.PREFERRED_SIZE, 53, GroupLayout.PREFERRED_SIZE)
+																	.addPreferredGap(ComponentPlacement.RELATED)))))
+													.addGap(35))
+												.addComponent(mauHoa_Field, Alignment.TRAILING, GroupLayout.PREFERRED_SIZE, 218, GroupLayout.PREFERRED_SIZE))))
+									.addGroup(gl_soLuong_Field.createSequentialGroup()
 										.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_soLuong_Field.createSequentialGroup().addGap(160)
-														.addGroup(gl_soLuong_Field
-																.createParallelGroup(Alignment.LEADING)
-																.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 90,
-																		GroupLayout.PREFERRED_SIZE)
-																.addGroup(gl_soLuong_Field.createSequentialGroup()
-																		.addComponent(jLabel7)
-																		.addPreferredGap(ComponentPlacement.RELATED)
-																		.addComponent(soCanhHoa_Field,
-																				GroupLayout.PREFERRED_SIZE, 53,
-																				GroupLayout.PREFERRED_SIZE))
-																.addComponent(jLabel2)))
-												.addGroup(gl_soLuong_Field.createSequentialGroup().addGap(159)
-														.addGroup(gl_soLuong_Field
-																.createParallelGroup(Alignment.TRAILING)
-																.addGroup(gl_soLuong_Field
-																		.createParallelGroup(Alignment.LEADING)
-																		.addGroup(gl_soLuong_Field
-																				.createSequentialGroup().addGap(6)
-																				.addComponent(jLabel6))
-																		.addGroup(gl_soLuong_Field
-																				.createParallelGroup(Alignment.LEADING,
-																						false)
-																				.addComponent(tenSP_Field)
-																				.addComponent(maSP_Field,
-																						GroupLayout.DEFAULT_SIZE, 217,
-																						Short.MAX_VALUE)))
-																.addGroup(gl_soLuong_Field.createSequentialGroup()
-																		.addGroup(gl_soLuong_Field
-																				.createParallelGroup(Alignment.LEADING)
-																				.addComponent(jLabel5)
-																				.addComponent(jLabel4)
-																				.addGroup(gl_soLuong_Field
-																						.createSequentialGroup()
-																						.addGap(18).addComponent(
-																								hoaDon_RadioButton,
-																								GroupLayout.PREFERRED_SIZE,
-																								103,
-																								GroupLayout.PREFERRED_SIZE)))
-																		.addGap(5)
-																		.addGroup(gl_soLuong_Field
-																				.createParallelGroup(Alignment.LEADING)
-																				.addGroup(gl_soLuong_Field
-																						.createSequentialGroup()
-																						.addGroup(gl_soLuong_Field
-																								.createParallelGroup(
-																										Alignment.LEADING)
-																								.addComponent(
-																										nhap_Button)
-																								.addGroup(
-																										gl_soLuong_Field
-																												.createSequentialGroup()
-																												.addGap(78)
-																												.addGroup(
-																														gl_soLuong_Field
-																																.createParallelGroup(
-																																		Alignment.TRAILING)
-																																.addComponent(
-																																		hoaDa_RadioButton,
-																																		GroupLayout.PREFERRED_SIZE,
-																																		103,
-																																		GroupLayout.PREFERRED_SIZE)
-																																.addGroup(
-																																		gl_soLuong_Field
-																																				.createSequentialGroup()
-																																				.addComponent(
-																																						jLabel8)
-																																				.addPreferredGap(
-																																						ComponentPlacement.RELATED)
-																																				.addComponent(
-																																						soHoaCon_Field,
-																																						GroupLayout.PREFERRED_SIZE,
-																																						50,
-																																						GroupLayout.PREFERRED_SIZE)))))
-																						.addGap(35))
-																				.addComponent(mauHoa_Field,
-																						Alignment.TRAILING,
-																						GroupLayout.PREFERRED_SIZE, 218,
-																						GroupLayout.PREFERRED_SIZE)))
-																.addComponent(soLuong_Field, GroupLayout.PREFERRED_SIZE,
-																		218, GroupLayout.PREFERRED_SIZE)))
-												.addGroup(gl_soLuong_Field.createSequentialGroup().addGap(172)
-														.addComponent(jLabel11)))
-										.addGap(67))
-								.addGroup(gl_soLuong_Field.createSequentialGroup().addGap(146)
-										.addComponent(textField_phieuNhap, GroupLayout.PREFERRED_SIZE, 412,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(ComponentPlacement.RELATED)))
-								.addPreferredGap(ComponentPlacement.RELATED))
-						.addGroup(
-								gl_soLuong_Field.createSequentialGroup().addGap(263).addComponent(jLabel1).addGap(230)))
-						.addPreferredGap(ComponentPlacement.RELATED)
-						.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 713, GroupLayout.PREFERRED_SIZE)
-						.addGap(1008).addComponent(jLabel10)));
-		gl_soLuong_Field.setVerticalGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_soLuong_Field.createSequentialGroup().addComponent(
-						jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGap(50)
-						.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING).addGroup(gl_soLuong_Field
-								.createSequentialGroup().addComponent(jLabel1)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE).addComponent(jLabel2)
-										.addComponent(tenSP_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE).addComponent(jLabel3)
-										.addComponent(maSP_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-												GroupLayout.PREFERRED_SIZE))
-								.addPreferredGap(ComponentPlacement.UNRELATED).addComponent(jLabel6)
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
-										.addComponent(hoaDon_RadioButton).addComponent(hoaDa_RadioButton))
-								.addGap(5)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE).addComponent(jLabel7)
-										.addComponent(jLabel8)
-										.addComponent(soCanhHoa_Field, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(soHoaCon_Field, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addGap(18)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
-										.addComponent(soLuong_Field, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(jLabel5))
-								.addPreferredGap(ComponentPlacement.RELATED)
-								.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
-										.addComponent(mauHoa_Field, GroupLayout.PREFERRED_SIZE,
-												GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-										.addComponent(jLabel4))
-								.addGap(18).addComponent(nhap_Button).addGap(79).addComponent(jLabel11)
-								.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-								.addComponent(textField_phieuNhap, GroupLayout.PREFERRED_SIZE, 63,
-										GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-								.addComponent(jLabel10)).addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 472,
-										GroupLayout.PREFERRED_SIZE))
-						.addContainerGap()));
+											.addComponent(jLabel5)
+											.addComponent(jLabel3, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+											.addComponent(jLabel2))
+										.addGap(104)
+										.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+											.addGroup(gl_soLuong_Field.createSequentialGroup()
+												.addGap(6)
+												.addComponent(jLabel6))
+											.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING, false)
+												.addComponent(tenSP_Field)
+												.addComponent(maSP_Field, GroupLayout.DEFAULT_SIZE, 217, Short.MAX_VALUE))))))
+							.addGap(67))
+						.addGroup(gl_soLuong_Field.createSequentialGroup()
+							.addGap(263)
+							.addComponent(jLabel1)
+							.addGap(230)))
+					.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_soLuong_Field.createSequentialGroup()
+							.addGap(1721)
+							.addComponent(jLabel10))
+						.addGroup(gl_soLuong_Field.createSequentialGroup()
+							.addGap(19)
+							.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 740, GroupLayout.PREFERRED_SIZE))))
+		);
+		gl_soLuong_Field.setVerticalGroup(
+			gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_soLuong_Field.createSequentialGroup()
+					.addComponent(jPanel4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addGap(50)
+					.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_soLuong_Field.createSequentialGroup()
+							.addComponent(jLabel1)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
+								.addComponent(tenSP_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel2))
+							.addGap(11)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_soLuong_Field.createSequentialGroup()
+									.addComponent(maSP_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+									.addPreferredGap(ComponentPlacement.UNRELATED)
+									.addComponent(jLabel6))
+								.addComponent(jLabel3))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
+								.addComponent(hoaDon_RadioButton)
+								.addComponent(hoaDa_RadioButton))
+							.addGap(5)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
+								.addComponent(jLabel8)
+								.addComponent(jLabel7)
+								.addComponent(soHoaCon_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(soCanhHoa_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addGap(18)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
+								.addComponent(soLuong_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel5))
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addGroup(gl_soLuong_Field.createParallelGroup(Alignment.BASELINE)
+								.addComponent(mauHoa_Field, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+								.addComponent(jLabel4))
+							.addGap(18)
+							.addComponent(nhap_Button)
+							.addGap(79)
+							.addComponent(jLabel11)
+							.addPreferredGap(ComponentPlacement.RELATED)
+							.addComponent(textField_phieuNhap, GroupLayout.PREFERRED_SIZE, 63, GroupLayout.PREFERRED_SIZE)
+							.addPreferredGap(ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+							.addComponent(jLabel10))
+						.addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 543, GroupLayout.PREFERRED_SIZE))
+					.addContainerGap())
+		);
 
 		table = new JTable();
 		table.setForeground(Color.WHITE);
@@ -350,14 +324,20 @@ public class Nhap extends javax.swing.JFrame {
 		jScrollPane1.setViewportView(table);
 
 		javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+		layout.setHorizontalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+					.addContainerGap(57, Short.MAX_VALUE)
+					.addComponent(jPanel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+					.addContainerGap())
+		);
+		layout.setVerticalGroup(
+			layout.createParallelGroup(Alignment.LEADING)
+				.addGroup(Alignment.TRAILING, layout.createSequentialGroup()
+					.addContainerGap()
+					.addComponent(jPanel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+		);
 		getContentPane().setLayout(layout);
-		layout.setHorizontalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-				.addGroup(layout.createSequentialGroup().addContainerGap()
-						.addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE,
-								javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-						.addContainerGap(14, Short.MAX_VALUE)));
-		layout.setVerticalGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING).addComponent(
-				jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
 		pack();
 	}// </editor-fold>//GEN-END:initComponents
