@@ -8,9 +8,10 @@ package modun;
  *
  * @author LAM
  */
-public class singleFlower extends Flower{
+public class singleFlower extends Flower {
+
     private double petalsFlowerNum;
-    
+
     public singleFlower(double petalsFlowerNum) {
         this.petalsFlowerNum = petalsFlowerNum;
     }
@@ -31,5 +32,5 @@ public class singleFlower extends Flower{
     public void setAmount(String amount) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }

@@ -9,28 +9,32 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import modun.listSaveInput;
+
 /**
  *
  * @author LAM
  */
 
-public class ViewInputList extends javax.swing.JFrame {
+public class View_LSNhap extends javax.swing.JFrame {
 
-private final List<listSaveInput> listSave;
-private final ViewAdmin vAdmin;
+    //private final List<listSaveInput> listSave;
+    //private final View_KiemKe vAdmin_Xuat;
+    private View_Admin vAdmin;
 
     /**
      * Creates new form ViewList
+     *
      * @param listSave
      * @param vAdmin
      */
-    public ViewInputList(List<listSaveInput> listSave, ViewAdmin vAdmin) {
+    public View_LSNhap(/*List<listSaveInput> listSave, View_KiemKe vAdmin_Xuat*/) {
         initComponents();
-        this.listSave = listSave;
-        this.vAdmin = vAdmin;
-        createTable(listSave);
+       /*this.listSave = listSave;
+        this.vAdmin_Xuat = vAdmin_Xuat;
+        createTable(listSave);*/
     }
-    private void createTable(List<listSaveInput> listSave){
+
+    private void createTable(List<listSaveInput> listSave) {
         DefaultTableModel table = new DefaultTableModel();
         TableViewlist.setModel(table);
         table.addColumn("Mã hoa");
@@ -42,14 +46,14 @@ private final ViewAdmin vAdmin;
         table.addColumn("Số cánh hoa");
         table.addColumn("Thời gian");
         for (listSaveInput flower : listSave) {
-            if((flower.getType()).equals("Hoa đa")){
-                table.addRow(new Object[] {flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), "Unknown", flower.getTime()});
-            }else{
-                table.addRow(new Object[] {flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), flower.getpetalsFlowerNum(), flower.getTime()});
+            if ((flower.getType()).equals("Hoa đa")) {
+                table.addRow(new Object[]{flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), "Unknown", flower.getTime()});
+            } else {
+                table.addRow(new Object[]{flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), flower.getpetalsFlowerNum(), flower.getTime()});
             }
         }
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,9 +65,9 @@ private final ViewAdmin vAdmin;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         TableViewlist = new javax.swing.JTable();
-        BackBtn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         coutExcelBtn = new javax.swing.JButton();
+        home = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,13 +100,6 @@ private final ViewAdmin vAdmin;
             TableViewlist.getColumnModel().getColumn(7).setPreferredWidth(150);
         }
 
-        BackBtn.setText("Quay lại");
-        BackBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackBtnActionPerformed(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel1.setText("DANH SÁCH HOA ĐÃ NHẬP");
 
@@ -110,6 +107,13 @@ private final ViewAdmin vAdmin;
         coutExcelBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 coutExcelBtnActionPerformed(evt);
+            }
+        });
+
+        home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/viewAndController/Home-icon.png"))); // NOI18N
+        home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                homeMouseClicked(evt);
             }
         });
 
@@ -121,44 +125,47 @@ private final ViewAdmin vAdmin;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(BackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(coutExcelBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 898, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(home)
+                                .addGap(323, 323, 323)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(377, 377, 377)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(364, 364, 364)
+                        .addComponent(coutExcelBtn)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(coutExcelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31)
-                .addComponent(BackBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 14, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(home)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(48, 48, 48))
+                .addGap(12, 12, 12)
+                .addComponent(coutExcelBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void BackBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackBtnActionPerformed
-        // TODO add your handling code here:
-        this.setVisible(false);
-        vAdmin.setVisible(true);
-    }//GEN-LAST:event_BackBtnActionPerformed
-
     private void coutExcelBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coutExcelBtnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_coutExcelBtnActionPerformed
+
+    private void homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homeMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        vAdmin = new View_Admin();
+        vAdmin.setVisible(true);
+    }//GEN-LAST:event_homeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,9 +201,9 @@ private final ViewAdmin vAdmin;
 //    }*/
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BackBtn;
     private javax.swing.JTable TableViewlist;
     private javax.swing.JButton coutExcelBtn;
+    private javax.swing.JLabel home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
