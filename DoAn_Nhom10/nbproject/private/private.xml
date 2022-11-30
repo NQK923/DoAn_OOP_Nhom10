@@ -3,13 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_LSNhap.java</file>
             <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_SuaXoa.java</file>
             <file>file:/C:/Users/pc/DoAn_Nhom10/src/ConnectDatabase/ConnectToXampp.java</file>
-            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_KhoHang.java</file>
-            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_LSXuat.java</file>
+            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_QuanLyTK.java</file>
+            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_Login.java</file>
             <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_KiemKe.java</file>
-            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_Admin.java</file>
+            <file>file:/C:/Users/pc/DoAn_Nhom10/src/viewAndController/View_NhanVien.java</file>
         </group>
     </open-files>
 </project-private>

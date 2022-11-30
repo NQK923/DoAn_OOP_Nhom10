@@ -8,12 +8,11 @@ package modun;
  *
  * @author LAM
  */
-public class listSaveInput {
-
+public class listFlower {
     private String Name, Code, Type, Color, Time;
     private double Amount, petalsFlowerNum, subFlowerNum;
-
-    public listSaveInput(String Code, String Name, String Type, String Color, double Amount, double subFlowerNum, double petalsFlowerNum, String Time) {
+    
+    public listFlower(String Code, String Name, String Type, String Color, double Amount, double subFlowerNum, double petalsFlowerNum, String Time) {
         this.Name = Name;
         this.Code = Code;
         this.Type = Type;
@@ -88,4 +87,6 @@ public class listSaveInput {
         this.Time = Time;
     }
 
+    
+    
 }
