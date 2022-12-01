@@ -8,9 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import modun.listFlower;
 import viewAndController.View_KhoHang;
-import viewAndController.View_LSNhap;
-import viewAndController.View_LSXuat;
+
 import viewAndController.View_SuaXoa;
+import viewAndController.ViewInputAdmin;
+import viewAndController.ViewOutputAdmin;
 
 /**
  *
@@ -18,8 +19,8 @@ import viewAndController.View_SuaXoa;
  */
 public class View_Admin extends javax.swing.JFrame {
 
-    private ViewInputList vInputList;
-    private ViewOutputList vOutputList;
+    private ViewInputAdmin vInputAdmin;
+    private ViewOutputAdmin vOutputAdmin;
     private View_KhoHang vKhoHang;
     private View_SuaXoa vSuaXoa;
     private View_KiemKe vKiemKe;
@@ -379,15 +380,15 @@ public class View_Admin extends javax.swing.JFrame {
     private void lichSuXuatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lichSuXuatMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        vOutputList = new ViewOutputList(listSaveOut, vNV);
-        vOutputList.setVisible(true);
+        vOutputAdmin = new ViewOutputAdmin(listSaveOut, vNV, this);
+        vOutputAdmin.setVisible(true);
     }//GEN-LAST:event_lichSuXuatMouseClicked
 
     private void LichSuNhapMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LichSuNhapMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
-        vInputList = new ViewInputList(listSave, vNV);
-        vInputList.setVisible(true);
+        vInputAdmin = new ViewInputAdmin(listSave, vNV, this);
+        vInputAdmin.setVisible(true);
     }//GEN-LAST:event_LichSuNhapMouseClicked
 
     private void taiKhoanMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_taiKhoanMouseClicked

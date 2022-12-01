@@ -15,9 +15,7 @@ import modun.banyanFlower;
 import modun.listFlower;
 import modun.singleFlower;
 import viewAndController.View_Admin;
-import viewAndController.View_LSNhap;
-import viewAndController.View_LSXuat;
-import viewAndController.View_LSXuat;
+
 
 /**
  *
@@ -34,8 +32,7 @@ public class View_SuaXoa extends javax.swing.JFrame {
     private final List<banyanFlower> listbanyan = new ArrayList<>();
     private final List<listFlower> listSaveOut = new ArrayList<>();
     private List<listFlower> listSave = new ArrayList<>();
-    private View_LSNhap vInputList;
-    private View_LSXuat vOutputList;
+
     private String typeFlowerKK;
     private View_Admin vAdmin;
 

@@ -29,8 +29,7 @@ public class View_KiemKe extends javax.swing.JFrame {
     private final List<banyanFlower> listbanyan = new ArrayList<>();
     private final List<listFlower> listSaveOut = new ArrayList<>();
     private List<listFlower> listSave = new ArrayList<>();
-    private View_LSNhap vInputList;
-    private View_LSXuat vOutputList;
+
     private String typeFlower;
     private String typeFlowerKK;
     private View_Admin vAdmin;
