@@ -4,9 +4,21 @@
  */
 package viewAndController;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import modun.listFlower;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -16,8 +28,10 @@ public class ViewOutputList extends javax.swing.JFrame {
 
     private final List<listFlower> listSaveOut;
     View_NhanVien vAdmin;
+
     /**
      * Creates new form ViewOutputList
+     *
      * @param listSaveOut
      * @param vAdmin
      */
@@ -27,7 +41,8 @@ public class ViewOutputList extends javax.swing.JFrame {
         this.vAdmin = vAdmin;
         createTable(listSaveOut);
     }
-    private void createTable(List<listFlower> listSave){
+
+    private void createTable(List<listFlower> listSave) {
         DefaultTableModel table = new DefaultTableModel();
         TableViewlist.setModel(table);
         table.addColumn("Mã hoa");
@@ -39,13 +54,14 @@ public class ViewOutputList extends javax.swing.JFrame {
         table.addColumn("Số cánh hoa");
         table.addColumn("Thời gian");
         for (listFlower flower : listSave) {
-            if((flower.getType()).equals("Hoa đa")){
-                table.addRow(new Object[] {flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), "Unknown", flower.getTime()});
-            }else{
-                table.addRow(new Object[] {flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), 0, flower.getpetalsFlowerNum(), flower.getTime()});
+            if ((flower.getType()).equals("Hoa đa")) {
+                table.addRow(new Object[]{flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), flower.getsubFlowerNum(), "Unknown", flower.getTime()});
+            } else {
+                table.addRow(new Object[]{flower.getCode(), flower.getName(), flower.getType(), flower.getColor(), flower.getAmount(), 0, flower.getpetalsFlowerNum(), flower.getTime()});
             }
         }
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -61,6 +77,7 @@ public class ViewOutputList extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         TableViewlist = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -96,6 +113,18 @@ public class ViewOutputList extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("Excel");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -110,6 +139,10 @@ public class ViewOutputList extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 999, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(458, 458, 458)
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -118,8 +151,10 @@ public class ViewOutputList extends javax.swing.JFrame {
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 439, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(10, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -158,10 +193,64 @@ public class ViewOutputList extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-          this.setVisible(false);
+        this.setVisible(false);
         vAdmin.setVisible(true);
     }//GEN-LAST:event_jLabel2MouseClicked
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+
+        try {
+            JFileChooser jFileChooser = new JFileChooser();
+            jFileChooser.showSaveDialog(this);
+            File saveFile = jFileChooser.getSelectedFile();
+
+            if (saveFile != null) {
+                saveFile = new File(saveFile.toString() + ".xlsx");
+                Workbook wb = new XSSFWorkbook();
+                Sheet sheet = wb.createSheet("customer");
+
+                Row rowCol = sheet.createRow(0);
+                for (int i = 0; i < TableViewlist.getColumnCount(); i++) {
+                    Cell cell = rowCol.createCell(i);
+                    cell.setCellValue(TableViewlist.getColumnName(i));
+                }
+
+                for (int j = 0; j < TableViewlist.getRowCount(); j++) {
+                    Row row = sheet.createRow(j + 1);
+                    for (int k = 0; k < TableViewlist.getColumnCount(); k++) {
+                        Cell cell = row.createCell(k);
+                        if (TableViewlist.getValueAt(j, k) != null) {
+                            cell.setCellValue(TableViewlist.getValueAt(j, k).toString());
+                        }
+                    }
+                }
+                FileOutputStream out = new FileOutputStream(new File(saveFile.toString()));
+                wb.write(out);
+                wb.close();
+                out.close();
+                openFile(saveFile.toString());
+            } else {
+                JOptionPane.showMessageDialog(null, "Error al generar archivo");
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+        } catch (IOException io) {
+            System.out.println(io);
+        }// TODO add your handling code here:// TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    public void openFile(String file) {
+        try {
+            File path = new File(file);
+            Desktop.getDesktop().open(path);
+        } catch (IOException ioe) {
+            System.out.println(ioe);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -199,6 +288,7 @@ public class ViewOutputList extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TableViewlist;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
